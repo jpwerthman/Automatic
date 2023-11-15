@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct Habit {
+    var name: String
+    var goal: Goal
+    var totalGoal: TotalGoal?
+}
 struct Goal {
     var amount: Int
     var timeUnit: TimeUnit

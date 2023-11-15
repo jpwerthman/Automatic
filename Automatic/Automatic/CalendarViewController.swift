@@ -7,5 +7,6 @@
 
 import UIKit
 class CalendarViewController: UIViewController {
-    
+    @IBOutlet weak var Calendar: UITabBarItem!
+
 }

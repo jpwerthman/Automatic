@@ -6,5 +6,6 @@
 //
 import UIKit
 class RankController: UIViewController {
-    
+    @IBOutlet weak var Ranks: UITabBarItem!
+
 }
