@@ -13,6 +13,13 @@
 		4DEADDBF2B0180A7002D7ED6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DEADDBE2B0180A7002D7ED6 /* Preview Assets.xcassets */; };
 		4DEADDC12B0180A7002D7ED6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEADDC02B0180A7002D7ED6 /* Persistence.swift */; };
 		4DEADDC42B0180A7002D7ED6 /* Automatic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DEADDC22B0180A7002D7ED6 /* Automatic.xcdatamodeld */; };
+		FCA21F162B0423F7005D212C /* Outline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA21F152B0423F7005D212C /* Outline.storyboard */; };
+		FCA21F182B042711005D212C /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA21F172B042711005D212C /* HabitsViewController.swift */; };
+		FCA21F1A2B042A88005D212C /* HabitsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA21F192B042A88005D212C /* HabitsDetailsController.swift */; };
+		FCA21F1E2B043861005D212C /* CreateHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA21F1D2B043861005D212C /* CreateHabitViewController.swift */; };
+		FCA21F202B043FD4005D212C /* HabitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA21F1F2B043FD4005D212C /* HabitData.swift */; };
+		FCA21F222B044043005D212C /* RankController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA21F212B044043005D212C /* RankController.swift */; };
+		FCA21F262B0440A7005D212C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA21F252B0440A7005D212C /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +30,13 @@
 		4DEADDBE2B0180A7002D7ED6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DEADDC02B0180A7002D7ED6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4DEADDC32B0180A7002D7ED6 /* Automatic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Automatic.xcdatamodel; sourceTree = "<group>"; };
+		FCA21F152B0423F7005D212C /* Outline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Outline.storyboard; sourceTree = "<group>"; };
+		FCA21F172B042711005D212C /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		FCA21F192B042A88005D212C /* HabitsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsDetailsController.swift; sourceTree = "<group>"; };
+		FCA21F1D2B043861005D212C /* CreateHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHabitViewController.swift; sourceTree = "<group>"; };
+		FCA21F1F2B043FD4005D212C /* HabitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitData.swift; sourceTree = "<group>"; };
+		FCA21F212B044043005D212C /* RankController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankController.swift; sourceTree = "<group>"; };
+		FCA21F252B0440A7005D212C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +53,13 @@
 		4DEADDAB2B0180A3002D7ED6 = {
 			isa = PBXGroup;
 			children = (
+				FCA21F252B0440A7005D212C /* CalendarViewController.swift */,
+				FCA21F212B044043005D212C /* RankController.swift */,
+				FCA21F1F2B043FD4005D212C /* HabitData.swift */,
+				FCA21F1D2B043861005D212C /* CreateHabitViewController.swift */,
+				FCA21F192B042A88005D212C /* HabitsDetailsController.swift */,
+				FCA21F172B042711005D212C /* HabitsViewController.swift */,
+				FCA21F152B0423F7005D212C /* Outline.storyboard */,
 				4DEADDB62B0180A3002D7ED6 /* Automatic */,
 				4DEADDB52B0180A3002D7ED6 /* Products */,
 			);
@@ -133,6 +154,7 @@
 			files = (
 				4DEADDBF2B0180A7002D7ED6 /* Preview Assets.xcassets in Resources */,
 				4DEADDBC2B0180A7002D7ED6 /* Assets.xcassets in Resources */,
+				FCA21F162B0423F7005D212C /* Outline.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,10 +165,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA21F262B0440A7005D212C /* CalendarViewController.swift in Sources */,
 				4DEADDC12B0180A7002D7ED6 /* Persistence.swift in Sources */,
 				4DEADDC42B0180A7002D7ED6 /* Automatic.xcdatamodeld in Sources */,
 				4DEADDBA2B0180A3002D7ED6 /* ContentView.swift in Sources */,
+				FCA21F1A2B042A88005D212C /* HabitsDetailsController.swift in Sources */,
+				FCA21F202B043FD4005D212C /* HabitData.swift in Sources */,
+				FCA21F1E2B043861005D212C /* CreateHabitViewController.swift in Sources */,
+				FCA21F182B042711005D212C /* HabitsViewController.swift in Sources */,
 				4DEADDB82B0180A3002D7ED6 /* AutomaticApp.swift in Sources */,
+				FCA21F222B044043005D212C /* RankController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
