@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //
 //  RankController.swift
 //  Automatic
@@ -20,16 +19,22 @@ class RankController: UIViewController {
         addChild(rankHostingController)
         view.addSubview(rankHostingController.view)
         rankHostingController.didMove(toParent: self)
+        
+        // Set up constraints for the hosting controller's view
+        rankHostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            rankHostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            rankHostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            rankHostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            rankHostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
     }
+
 }
 
 
 
 
-=======
-import SwiftUI
-
->>>>>>> main
 struct RankView: View {
     @State private var selectedSegment = 0 // 0 for hours, 1 for days
 
@@ -40,18 +45,44 @@ struct RankView: View {
                 Text("Days").tag(1)
             }
             .pickerStyle(SegmentedPickerStyle())
+            .padding()
+            .background(Color.blue.opacity(0.2))
+            .cornerRadius(8)
+            .padding(.horizontal)
 
-            Group {
-                Text(rankText(for: .master))
-                Text(rankText(for: .emperor))
-                Text(rankText(for: .silver))
-                Text(rankText(for: .bronze))
-                Text(rankText(for: .legend))
-                Text(rankText(for: .copper))
-                Text(rankText(for: .gold))
-                Text(rankText(for: .beginner))
+            ScrollView {
+                VStack(alignment: .leading, spacing: 12) {
+                    Group {
+                        RankTextView(rank: .master, selectedSegment: $selectedSegment)
+                        RankTextView(rank: .emperor, selectedSegment: $selectedSegment)
+                        RankTextView(rank: .silver, selectedSegment: $selectedSegment)
+                        RankTextView(rank: .bronze, selectedSegment: $selectedSegment)
+                        RankTextView(rank: .legend, selectedSegment: $selectedSegment)
+                        RankTextView(rank: .copper, selectedSegment: $selectedSegment)
+                        RankTextView(rank: .gold, selectedSegment: $selectedSegment)
+                        RankTextView(rank: .beginner, selectedSegment: $selectedSegment)
+                    }
+                }
+                .padding()
             }
         }
+        .navigationTitle("Rankings") // If using a NavigationView
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.gray.opacity(0.1))
+    }
+}
+
+struct RankTextView: View {
+    let rank: Rank
+    @Binding var selectedSegment: Int
+
+    var body: some View {
+        Text(rankText(for: rank))
+            .font(.headline)
+            .fontWeight(.medium)
+            .foregroundColor(Color.blue)
+            .padding(.vertical, 4)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func rankText(for rank: Rank) -> String {
@@ -74,10 +105,10 @@ struct RankView: View {
             return "Beginner: \(selectedSegment == 0 ? "5 Hours" : "5 Days")"
         }
     }
+}
 
-    enum Rank {
-        case master, emperor, silver, bronze, legend, copper, gold, beginner
-    }
+enum Rank {
+    case master, emperor, silver, bronze, legend, copper, gold, beginner
 }
 
 struct RankView_Previews: PreviewProvider {
