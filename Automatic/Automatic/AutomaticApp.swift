@@ -8,12 +8,6 @@
 import SwiftUI
 
 
-
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 @main
 struct AutomaticApp: App {
     let persistenceController = PersistenceController.shared

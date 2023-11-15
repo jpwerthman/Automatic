@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //
 //  RankController.swift
 //  Automatic
@@ -25,11 +24,6 @@ class RankController: UIViewController {
 
 
 
-
-=======
-import SwiftUI
-
->>>>>>> main
 struct RankView: View {
     @State private var selectedSegment = 0 // 0 for hours, 1 for days
 

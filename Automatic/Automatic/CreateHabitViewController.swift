@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import UIKit
 
 protocol CreateHabitDelegate: AnyObject {
@@ -14,31 +13,16 @@ class CreateHabitViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.isUserInteractionEnabled = true
+        tableView.allowsSelection = true
+
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(HabitNameCell.self, forCellReuseIdentifier: "HabitNameCell")
         tableView.register(GoalCell.self, forCellReuseIdentifier: "GoalCell")
         tableView.register(TotalGoalCell.self, forCellReuseIdentifier: "TotalGoalCell")
+
         return tableView
     }()
-=======
-//
-//  CreateHabitViewController.swift
-//  Automatic
-//
-//  Created by Nikos Claman on 11/14/23.
-//
-
-import UIKit
-
-class CreateHabitViewController: UIViewController {
-    weak var delegate: CreateHabitDelegate?
-
-    @IBOutlet private weak var habitNameTextField: UITextField!
-    @IBOutlet private weak var amountTextField: UITextField!
-    @IBOutlet private weak var timeUnitPicker: UIPickerView!
-    @IBOutlet private weak var frequencyPicker: UIPickerView!
-    @IBOutlet private weak var totalGoalTextField: UITextField!
->>>>>>> Stashed changes
 
     private var selectedTimeUnit: TimeUnit = .times
     private var selectedFrequency: Frequency = .perHour
@@ -50,7 +34,6 @@ class CreateHabitViewController: UIViewController {
 
     func setupUI() {
         title = "Create Habit"
-<<<<<<< Updated upstream
         
         view.addSubview(tableView)
         
@@ -74,24 +57,14 @@ class CreateHabitViewController: UIViewController {
         }
 
         guard let habitName = habitNameCell.habitNameTextField.text,
+              
               let amountText = goalCell.amountTextField.text,
-=======
-
-        // Customize additional UI setup if needed
-    }
-
-    @IBAction func createHabitButtonTapped(_ sender: UIButton) {
-        // Validate input and create the habit
-        guard let habitName = habitNameTextField.text,
-              let amountText = amountTextField.text,
->>>>>>> Stashed changes
               let amount = Int(amountText) else {
             // Handle validation error
             return
         }
 
         let goal = Goal(amount: amount, timeUnit: selectedTimeUnit, frequency: selectedFrequency)
-<<<<<<< Updated upstream
         let totalGoal = calculateTotalGoal(from: totalGoalCell)
 
         delegate?.didCreateHabit(name: habitName, goal: goal, totalGoal: totalGoal)
@@ -195,7 +168,11 @@ class CreateHabitViewController: UIViewController {
         let habitNameTextField: UITextField = {
             let textField = UITextField()
             textField.translatesAutoresizingMaskIntoConstraints = false
+            textField.isUserInteractionEnabled = true // This should be the default, but it's good to double-check.
+
             textField.borderStyle = .roundedRect
+            textField.isUserInteractionEnabled = true
+
             return textField
         }()
 
@@ -232,6 +209,8 @@ class CreateHabitViewController: UIViewController {
         let frequencyPicker: UIPickerView = {
             let picker = UIPickerView()
             picker.translatesAutoresizingMaskIntoConstraints = false
+            picker.isUserInteractionEnabled = true
+
             return picker
         }()
         
@@ -245,7 +224,6 @@ class CreateHabitViewController: UIViewController {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
             setupUI()
         }
-
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
@@ -304,22 +282,3 @@ class CreateHabitViewController: UIViewController {
     }
 }
 
-=======
-        let totalGoal = calculateTotalGoal()
-
-        // Notify the delegate (e.g., HabitsViewController) that a habit is created
-        delegate?.didCreateHabit(name: habitName, goal: goal, totalGoal: totalGoal)
-
-        // Dismiss the CreateHabitViewController
-        dismiss(animated: true, completion: nil)
-    }
-
-    private func calculateTotalGoal() -> TotalGoal? {
-        // Implement calculation logic for total goal if needed
-        // You can use the totalGoalTextField or any other input as needed
-        return nil
-    }
-}
-
-
->>>>>>> Stashed changes

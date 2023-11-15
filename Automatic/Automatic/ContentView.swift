@@ -1,8 +1,5 @@
 import SwiftUI
-<<<<<<< HEAD
 import UIKit
-=======
->>>>>>> main
 
 struct ContentView: View {
     var body: some View {
@@ -19,19 +16,11 @@ struct ContentView: View {
             RankControllerWrapper()
                 .tabItem {
                     Image(systemName: "rosette")
-<<<<<<< HEAD
                     Text("Ranking")
                 }
             
             HabitsViewControllerWrapper()
                 .tabItem {
-=======
-                    Text("Rankings")
-                }
-            
-            HabitsViewControllerWrapper()
-                .tabItem{
->>>>>>> main
                     Image(systemName: "checklist")
                     Text("Habits")
                 }
@@ -40,11 +29,7 @@ struct ContentView: View {
     }
 }
 
-<<<<<<< HEAD
 // Use UIViewControllerRepresentable for each view controller
-=======
-
->>>>>>> main
 struct CalendarViewControllerWrapper: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> CalendarViewController {
         return CalendarViewController()
@@ -56,50 +41,32 @@ struct CalendarViewControllerWrapper: UIViewControllerRepresentable {
 }
 
 
-<<<<<<< HEAD
 struct RankControllerWrapper: UIViewControllerRepresentable {
-=======
-
-struct RankControllerWrapper: UIViewControllerRepresentable {
-    
->>>>>>> main
     func makeUIViewController(context: Context) -> RankController {
         return RankController()
     }
 
     func updateUIViewController(_ uiViewController: RankController, context: Context) {
-<<<<<<< HEAD
         // Update the view controller if needed
-=======
-//         Update the view controller if needed
->>>>>>> main
     }
 }
 
 
 struct HabitsViewControllerWrapper: UIViewControllerRepresentable {
-<<<<<<< HEAD
-=======
-    
->>>>>>> main
-    func makeUIViewController(context: Context) -> HabitsViewController {
-        return HabitsViewController()
+    func makeUIViewController(context: Context) -> UINavigationController {
+        // This creates the HabitsViewController and embeds it in a UINavigationController
+        let habitsViewController = HabitsViewController()
+        let navigationController = UINavigationController(rootViewController: habitsViewController)
+        return navigationController
     }
 
-    func updateUIViewController(_ uiViewController: HabitsViewController, context: Context) {
-<<<<<<< HEAD
-        // Update the view controller if needed
-    }
-}
-
-=======
-//         Update the view controller if needed
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
+        // Perform any updates to the UINavigationController or its view controllers here.
+        // This may be empty if there are no updates needed.
     }
 }
 
 
-
->>>>>>> main
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
