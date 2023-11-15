@@ -1,5 +1,35 @@
+<<<<<<< HEAD
+//
+//  RankController.swift
+//  Automatic
+//
+//  Created by Nikos Claman on 11/14/23.
+//
+import SwiftUI
+import UIKit
+
+class RankController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Create a UIHostingController with your SwiftUI view
+        let rankHostingController = UIHostingController(rootView: RankView())
+
+        // Add the UIHostingController as a child view controller
+        addChild(rankHostingController)
+        view.addSubview(rankHostingController.view)
+        rankHostingController.didMove(toParent: self)
+    }
+}
+
+
+
+
+=======
 import SwiftUI
 
+>>>>>>> main
 struct RankView: View {
     @State private var selectedSegment = 0 // 0 for hours, 1 for days
 

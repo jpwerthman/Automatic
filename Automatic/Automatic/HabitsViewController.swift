@@ -35,6 +35,10 @@ class HabitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+//        let testLabel = UILabel()
+//        testLabel.text = "test"
+//        testLabel.frame = CGRect(x: 50, y: 100, width: 200, height: 30)
+//        view.addSubview(testLabel)
     }
 
     func setupUI() {
@@ -42,9 +46,8 @@ class HabitsViewController: UIViewController {
 <<<<<<< Updated upstream
         
         view.addSubview(tableView)
-        
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: -50),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
